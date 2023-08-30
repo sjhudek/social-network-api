@@ -1,7 +1,18 @@
 const express = require("express");
 const morgan = require("morgan");
+const mongoose = require("mongoose");
 
 const app = express();  //Create new instance
+
+mongoose
+    .connect(process.env.MONGO_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    }).then(() => {
+        console.log("Database connection Success!");
+    }).catch((err) => {
+        console.error("MongoDB Connection Error", err);
+    });
 
 const PORT = process.env.PORT || 5000; //Declare the port number
 
@@ -17,3 +28,4 @@ app.get("/ping", (req, res) => {
 app.listen(PORT, () => {
   console.log("Server started listening on port : ", PORT);
 });
+
