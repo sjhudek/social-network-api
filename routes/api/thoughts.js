@@ -25,8 +25,9 @@ router.post('/:thoughtId/reactions', async (req, res) => {
     try {
         const thought = await thoughtController.addReaction(req.params.thoughtId, req.body);
         res.json(thought);
-    } catch (error) {
-        res.status(500).json(error);
+    } catch (err) {
+        console.error(err);  // Log the error to the console
+        res.status(500).json({ error: err.message });  // Send the error message in the response
     }
 });
 
