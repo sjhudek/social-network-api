@@ -1,5 +1,19 @@
 const Thought = require('../models/Thought');
 
+addReaction: async (thoughtId, reactionData) => {
+    const thought = await Thought.findById(thoughtId);
+    thought.reactions.push(reactionData);
+    await thought.save();
+    return thought;
+};
+
+removeReaction: async (thoughtId, reactionId) => {
+    const thought = await Thought.findById(thoughtId);
+    thought.reactions.id(reactionId).remove();
+    await thought.save();
+    return thought;
+};
+
 module.exports = {
     getAllThoughts: async () => {
         return await Thought.find();
