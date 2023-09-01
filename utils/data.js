@@ -1,35 +1,92 @@
 module.exports = {
     users: [
         {
-            username: 'john_doe',
-            email: 'john_doe@example.com',
+            username: 'carmine_dioxide',
+            email: 'carmine_dioxide@example.com',
+            id: 1
         },
         {
-            username: 'jane_doe',
-            email: 'jane_doe@example.com',
+            username: 'lou_segusi',
+            email: 'lou_segusi@example.com',
+            id: 2
         },
-        // ... Add more users as needed
+        {
+            username: 'hugo_girl',
+            email: 'hugo_girl@example.com',
+            id: 3
+        },
+        {
+            username: 'barbara_seville',
+            email: 'barbara_seville@example.com',
+            id: 4
+        },
+        {
+            username: 'placebo_domingo',
+            email: 'placebo_domingo@example.com',
+            id: 5
+        },
+        {
+            username: 'noah_vale',
+            email: 'noah_vale@example.com',
+            id: 6
+        },
     ],
     thoughts: [
         {
+            id: 1,
             thoughtText: 'This is my first thought!',
-            username: 'john_doe'
+            username: 'carmine_dioxide'
         },
         {
+            id: 2,
             thoughtText: 'I love coding!',
-            username: 'jane_doe'
+            username: 'lou_segusi'
         },
-        // ... Add more thoughts as needed
+        {
+            id: 3,
+            thoughtText: 'Exploring new places is so exciting!',
+            username: 'hugo_girl'
+        },
+        {
+            id: 4,
+            thoughtText: 'Trying out new recipes in the kitchen today.',
+            username: 'barbara_seville'
+        },
+        {
+            id: 5,
+            thoughtText: 'Opera is the best!',
+            username: 'placebo_domingo'
+        },
+        {
+            id: 6,
+            thoughtText: 'Couch sufer.',
+            username: 'noah_vale'
+        },
     ],
     reactions: [
         {
             reactionBody: 'Great thought!',
-            username: 'jane_doe'
+            username: 'carmine_dioxide'
         },
         {
             reactionBody: 'Thanks!',
-            username: 'john_doe'
+            username: 'lou_segusi'
         },
-        // ... Add more reactions as needed
+        {
+            reactionBody: 'I agree!',
+            username: 'hugo_girl'
+        },
+        {
+            reactionBody: 'That sounds delicious!',
+            username: 'barbara_seville'
+        },
+        {
+            reactionBody: 'Wow! Did\'t know that!',
+            username: 'noah_vale'
+        },
+        {
+            reactionBody: 'Is that true?',
+            username: 'placebo_domingo'
+        },
     ]
 };
