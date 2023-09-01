@@ -18,6 +18,6 @@ module.exports = {
     deleteUser: async (id) => {
         const userToDelete = await User.findById(id);
         await Thought.deleteMany({ _id: { $in: userToDelete.thoughts } });
-        return await userToDelete.delete();
-    }
+        return await User.deleteOne({ _id: id });
+    }    
 };
