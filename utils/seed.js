@@ -1,26 +1,43 @@
 const mongoose = require('mongoose');
+const ObjectId = mongoose.Types.ObjectId; // Moved this line after requiring mongoose
 const { users, thoughts, reactions } = require('./data');
 const User = require('../models/User');
 const Thought = require('../models/Thought');
-const db = require('../config/connection');
-
-mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true });
+require('../config/connection');
 
 const seedDatabase = async () => {
+    try {
+        console.log("Seeding database...");
     await User.deleteMany({});
     await Thought.deleteMany({});
     
-    const createdUsers = await User.insertMany(users);
+    const mappedUsers = users.map(({ id, ...rest }) => {
+        return {
+            ...rest,
+            _id: id
+        };
+    });
+    
+    const mappedThoughts = thoughts.map(({ id, ...rest }) => {
+        return {
+            ...rest,
+            _id: id
+        };
+    });         
 
-    // Attach the users to some of the thoughts for variety in seeding.
-    for (let i = 0; i < thoughts.length; i++) {
-        thoughts[i].username = createdUsers[Math.floor(Math.random() * createdUsers.length)].username;
-    }
+    // Place the console.log statements here
+    console.log(mappedUsers);
+    console.log(mappedThoughts);
 
-    await Thought.insertMany(thoughts);
+    await User.insertMany(mappedUsers);
+    await Thought.insertMany(mappedThoughts);
 
     console.log('All data imported!');
     process.exit(0);
+
+} catch (error) {
+    console.error("Error seeding database:", error);
+}
 };
 
 seedDatabase();
