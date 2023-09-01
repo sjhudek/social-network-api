@@ -8,6 +8,9 @@ app.use(express.json());
 
 const userRoutes = require('./routes/api/users');
 const thoughtRoutes = require('./routes/api/thoughts');
+const reactionRoutes = require('./routes/api/reaction');
+app.use('/api/reactions', reactionRoutes);
+
 
 app.use('/api/users', userRoutes);
 app.use('/api/thoughts', thoughtRoutes);
