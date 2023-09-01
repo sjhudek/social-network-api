@@ -9,7 +9,9 @@ app.use(express.json());
 const userRoutes = require('./routes/api/users');
 const thoughtRoutes = require('./routes/api/thoughts');
 
-
+app.get('/', (req, res) => {
+    res.send('Welcome to the Social Network API!');
+});
 app.use('/api/users', userRoutes);
 app.use('/api/thoughts', thoughtRoutes);
 
