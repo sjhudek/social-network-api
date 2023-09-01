@@ -35,22 +35,22 @@ module.exports = {
         {
             id: 1,
             thoughtText: 'This is my first thought!',
-            username: 'carmine_dioxide'
+            userName: 'carmine_dioxide'
         },
         {
             id: 2,
             thoughtText: 'I love coding!',
-            username: 'lou_segusi'
+            userName: 'lou_segusi'
         },
         {
             id: 3,
             thoughtText: 'Exploring new places is so exciting!',
-            username: 'hugo_girl'
+            userName: 'hugo_girl'
         },
         {
             id: 4,
             thoughtText: 'Trying out new recipes in the kitchen today.',
-            username: 'barbara_seville'
+            userName: 'barbara_seville'
         },
         {
             id: 5,
