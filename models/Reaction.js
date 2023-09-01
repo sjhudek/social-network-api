@@ -3,9 +3,9 @@ const moment = require('moment');
 // const ReactionSchema = require('./Thought');
 
 const ReactionSchema = new mongoose.Schema({
-    reactionId: {
-        type: mongoose.Schema.Types.ObjectId,
-        default: new mongoose.Types.ObjectId()
+    _id: {
+        type: Number,
+        required: true
     },
     reactionBody: {
         type: String,
