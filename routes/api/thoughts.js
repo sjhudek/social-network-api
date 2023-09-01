@@ -21,4 +21,23 @@ router.delete('/:id', async (req, res) => {
     res.json(await thoughtController.deleteThought(req.params.id));
 });
 
+router.post('/:thoughtId/reactions', async (req, res) => {
+    try {
+        const thought = await thoughtController.addReaction(req.params.thoughtId, req.body);
+        res.json(thought);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
+
+// Route to remove a reaction from a thought
+router.delete('/:thoughtId/reactions/:reactionId', async (req, res) => {
+    try {
+        const thought = await thoughtController.removeReaction(req.params.thoughtId, req.params.reactionId);
+        res.json(thought);
+    } catch (error) {
+        res.status(500).json(error);
+    }
+});
+
 module.exports = router;
