@@ -28,7 +28,7 @@ SO THAT our website can provide a smooth and efficient experience, even as we gr
 - - - I can also add or remove friends from a user's friend list successfully.
 
 ## GitHub:
-https://github.com/sjhudek/social-network-api
+- https://github.com/sjhudek/social-network-api
 
 ## Video Walkthrough
 - https://youtu.be/P8tb2_xOg8U
