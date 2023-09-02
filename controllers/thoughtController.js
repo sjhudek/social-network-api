@@ -33,8 +33,18 @@ module.exports = {
         return await newThought.save();
     },
     updateThought: async (id, data) => {
-        return await Thought.findByIdAndUpdate(id, data, { new: true });
+        try {
+            // const numericId = Number(id);
+            const updatedThought = await Thought.findByIdAndUpdate(id, data, { new: true });
+            if (!updatedThought) {
+                throw new Error('No thought found with this id!');
+            }
+            return updatedThought;
+        } catch (error) {
+            throw error;
+        }
     },
+    
     deleteThought: async (id) => {
         return await Thought.findByIdAndDelete(id);
     },
