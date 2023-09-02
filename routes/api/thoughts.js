@@ -37,7 +37,7 @@ router.delete('/:thoughtId/reactions/:reactionId', async (req, res) => {
         const thought = await thoughtController.removeReaction(req.params.thoughtId, req.params.reactionId);
         res.json(thought);
     } catch (error) {
-        res.status(500).json(error);
+        res.status(500).json({ message: error.message });
     }
 });
 
