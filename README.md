@@ -10,17 +10,22 @@ SO THAT our website can provide a smooth and efficient experience, even as we gr
 
 ## What You Can Expect:
 
-- Starting Up:
- - - When you kick things off with the right command, our system will not only start up but also make sure everything's in sync with our MongoDB database using Mongoose.
+- Starting the Server:
+- - When I run the application command, the server starts:
+- - - the Mongoose models are synchronized with the MongoDB database.
 
-- Viewing User Info:
-- - Curious about user details or thoughts? Just use the API GET routes. You'll see all the data neatly presented in a JSON format, making it both readable and technically sound.
+- Viewing User and Thought Data:
+- - When I use Insomnia to access the API's GET routes for users and thoughts:
+- - - the data for these routes appears in a nicely formatted JSON.
 
-- Adding & Changing Stuff:
-- - With our API POST and PUT routes, you can effortlessly add or modify users and thoughts. And if you ever need to remove something? The DELETE route has got your back.
+- Managing User and Thought Data:
+- - When I use Insomnia to interact with the API's POST, PUT, and DELETE routes:
+- - - I can create, update, and delete users and thoughts in the database.
 
-- Interacting with Thoughts:
-- - Using the API POST route, you can add reactions to thoughts or even add new friends to a user's list. And if you ever want to undo? The DELETE route lets you remove reactions or friends with ease.
+- Reacting to Thoughts and Managing Friends:
+- - When I use Insomnia to test the API's POST and DELETE routes:
+- - - I can add or remove reactions to thoughts.
+- - - I can also add or remove friends from a user's friend list successfully.
 
 ## GitHub:
 https://github.com/sjhudek/social-network-api
