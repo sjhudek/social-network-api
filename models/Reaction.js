@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const moment = require('moment');
-// const ReactionSchema = require('./Thought');
 
 const ReactionSchema = new mongoose.Schema({
     reactionBody: {
