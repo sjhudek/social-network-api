@@ -19,5 +19,19 @@ module.exports = {
         const userToDelete = await User.findById(id);
         await Thought.deleteMany({ _id: { $in: userToDelete.thoughts } });
         return await User.deleteOne({ _id: id });
-    }    
+    },
+    addFriend: async (userId, friendId) => {
+        const user = await User.findById(userId);
+        user.friends.push(friendId);
+        await user.save();
+        return user;
+    },
+    
+    removeFriend: async (userId, friendId) => {
+        const user = await User.findById(userId);
+        user.friends = user.friends.filter(id => id.toString() !== friendId);
+        await user.save();
+        return user;
+    }
+        
 };
