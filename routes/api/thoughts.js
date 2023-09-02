@@ -14,8 +14,15 @@ router.post('/', async (req, res) => {
 });
 
 router.put('/:id', async (req, res) => {
-    res.json(await thoughtController.updateThought(req.params.id, req.body));
+    try {
+        const updatedThought = await thoughtController.updateThought(req.params.id, req.body);
+        res.json(updatedThought);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: error.message });
+    }
 });
+
 
 router.delete('/:id', async (req, res) => {
     res.json(await thoughtController.deleteThought(req.params.id));
