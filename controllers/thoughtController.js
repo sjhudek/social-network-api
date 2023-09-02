@@ -57,12 +57,23 @@ module.exports = {
             if (!thought) {
                 throw new Error('No thought found with this id!');
             }
-            thought.reactions.id(reactionId).remove();
+    
+            // Find the index of the reaction to remove
+            const reactionIndex = thought.reactions.findIndex(reaction => reaction._id.toString() === reactionId);
+    
+            if (reactionIndex === -1) {
+                throw new Error('Reaction not found!');
+            }
+    
+            // Remove the reaction using splice
+            thought.reactions.splice(reactionIndex, 1);
+    
             await thought.save();
             return thought;
         } catch (error) {
             throw error;
         }
-    }    
+    }
+    
 };
 
