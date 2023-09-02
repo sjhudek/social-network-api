@@ -67,7 +67,7 @@ module.exports = {
         {
             reactionBody: 'Great thought!',
             username: 'carmine_dioxide'
-        },
+        },  
         {
             reactionBody: 'Thanks!',
             username: 'lou_segusi'
