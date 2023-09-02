@@ -31,7 +31,7 @@ SO THAT our website can provide a smooth and efficient experience, even as we gr
 https://github.com/sjhudek/social-network-api
 
 ## Video Walkthrough
-- 
+- https://youtu.be/P8tb2_xOg8U
 
 ## References
 
